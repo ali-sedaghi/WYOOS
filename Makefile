@@ -32,3 +32,7 @@ mykernel.iso: mykernel.bin
 	echo '}' >> iso/boot/grub/grub.cfg
 	grub-mkrescue --output=$@ iso
 	rm -rf iso
+
+run: mykernel.iso
+	(killall VirtualBoxVM && sleep 1) || true
+	VirtualBoxVM --startvm "My OS" &
