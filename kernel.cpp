@@ -1,4 +1,5 @@
 #include "types.h"
+#include "gdt.h"
 
 // Declaring printf function beacaue we don't access to built-in libs
 void printf(char* str) {
@@ -21,5 +22,8 @@ extern "C" void callConstructors() {
 // extern tell g++ not to change the function name on object file
 extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*magicnumber*/) {
     printf("Hello World! Welcome to nikomadol OS.");
+
+    GlobalDescriptorTable gdt;
+    
     while(1);
 }
