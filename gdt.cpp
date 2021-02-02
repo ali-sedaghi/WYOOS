@@ -26,7 +26,7 @@ uint16_t GlobalDescriptorTable::CodeSegmentSelector() {
 }
 
 // Assign limit, flags and pointers on 8 bytes of GDT
-GlobalDescriptorTable::SegmentDescriptor::SegmentDescriptor(uint32_t base, uint32_t limit, uint8_t flags) {
+GlobalDescriptorTable::SegmentDescriptor::SegmentDescriptor(uint32_t base, uint32_t limit, uint8_t type) {
     // Because GDT structure is so sparse there will be lots of if else
     uint8_t* target = (uint8_t*)this;
 
@@ -52,7 +52,7 @@ GlobalDescriptorTable::SegmentDescriptor::SegmentDescriptor(uint32_t base, uint3
     target[4] = (base >> 16) & 0xFF;
     target[7] = (base >> 24) & 0xFF;
 
-    target[5] = flags;
+    target[5] = type;
 }
 
 uint32_t GlobalDescriptorTable::SegmentDescriptor::Base() {
