@@ -2,6 +2,8 @@
 
 Write Your Own Operating System
 
+Code along [videos](https://www.youtube.com/channel/UCQdZltW7bh1ta-_nCH7LWYw)
+
 
 ## How to run
 
