@@ -1,9 +1,16 @@
 # WYOOS
-My own Operating System
+
+Write Your Own Operating System
+
+
+## How to run
 
 Open and Run OS on VirtualBox VM named "My OS"
-make run
-
+```bash
+$ make run
+```
 
 Install OS on your ubuntu grub
-make install
+```bash
+$ make install
+```
